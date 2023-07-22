@@ -21,10 +21,10 @@ export class Server {
  private initialize(): void {
    this.app = express();
    this.httpServer = createServer(this.app);
-   //this.io = new SocketIOServer(this.httpServer);
+   this.io = new SocketIOServer(this.httpServer);
 
    this.configureApp();
-  // this.handleSocketConnection();
+  this.handleSocketConnection();
  }
  
  private handleRoutes(): void {
